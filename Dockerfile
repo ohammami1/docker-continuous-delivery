@@ -3,10 +3,9 @@ FROM alpine
 RUN mkdir /app
 RUN cd /app
 
-ADD entrypoint.sh .
-RUN chmod +x entrypoint.sh
+ADD build.tar.gz .
 
-ADD /tmp/build.tar.gz .
+ADD entrypoint.sh /usr/bin/entrypoint.sh
+CMD sh /usr/bin/entrypoint.sh
 
 WORKDIR ["/app"]
-ENTRYPOINT ["./entrypoint.sh"]
