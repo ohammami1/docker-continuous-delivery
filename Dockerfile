@@ -1,4 +1,4 @@
-from alpine
+FROM alpine
 
 RUN mkdir /app
 RUN cd /app
